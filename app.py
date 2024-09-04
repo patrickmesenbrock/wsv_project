@@ -12,15 +12,15 @@ credentials = service_account.Credentials.from_service_account_info(
     st.secrets["gcp_service_account"]
 )
 
-def authenticate():
-    # Path to the service account key file downloaded from GCP
-    service_account_key_file = '02_WSV\myproject-patrickmesenbrock-ced7cdd7605a.json'
+# def authenticate():
+#     # Path to the service account key file downloaded from GCP
+#     service_account_key_file = '02_WSV\myproject-patrickmesenbrock-ced7cdd7605a.json'
 
-    # Authenticate using service account credentials
-    credentials = service_account.Credentials.from_service_account_file(
-        service_account_key_file)
+#     # Authenticate using service account credentials
+#     credentials = service_account.Credentials.from_service_account_file(
+#         service_account_key_file)
 
-    return credentials
+#     return credentials
 
 # Call the authenticate function to get the credentials
 # CREDENTIALS = authenticate()
