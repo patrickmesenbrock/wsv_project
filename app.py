@@ -8,7 +8,7 @@ import streamlit as st
 import numpy as np
 
 # Access the credentials from Streamlit secrets
-credentials = service_account.Credentials.from_service_account_info(
+CREDENTIALS = service_account.Credentials.from_service_account_info(
     st.secrets["gcp_service_account"]
 )
 
