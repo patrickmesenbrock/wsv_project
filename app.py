@@ -7,6 +7,11 @@ import pandas_gbq
 import streamlit as st
 import numpy as np
 
+# Access the credentials from Streamlit secrets
+credentials = service_account.Credentials.from_service_account_info(
+    st.secrets["gcp_service_account"]
+)
+
 def authenticate():
     # Path to the service account key file downloaded from GCP
     service_account_key_file = '02_WSV\myproject-patrickmesenbrock-ced7cdd7605a.json'
@@ -18,9 +23,9 @@ def authenticate():
     return credentials
 
 # Call the authenticate function to get the credentials
-CREDENTIALS = authenticate()
+# CREDENTIALS = authenticate()
 
-PROJECT_ID = "myproject-patrickmesenbrock"
+PROJECT_ID = st.secrets["gcp_service_account"]["project_id"]
 DATASET_ID = "world_value_survey"
 TABLE_ID = "wsv_dems_num_focused_PM"
 QUERY = f"select * from {DATASET_ID}.{TABLE_ID}"
