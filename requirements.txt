@@ -1,0 +1,6 @@
+#libraries to import
+pandas 
+pandas-gbq
+google-auth
+streamlit
+
